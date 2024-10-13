@@ -8,26 +8,26 @@ Widget::Widget(QWidget *parent)
 {
     setFixedSize(600,400);
     QMdiArea *area = new QMdiArea();
-    area -> setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);  //°¡·Î ¼¼·Î Å©±â °°ÀÌ ´Ã¾î³ª¶ó´Â ÄÚµå
-    ////MdiArea´Â °¡Àå »óÀ§ ¿µ¿ª
+    area -> setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);  //ê°€ë¡œ ì„¸ë¡œ í¬ê¸° ê°™ì´ ëŠ˜ì–´ë‚˜ë¼ëŠ” ì½”ë“œ
+    //MdiAreaëŠ” ê°€ì¥ ìƒìœ„ ì˜ì—­
 
 
-    //Sub¿¡´Ù°¡ À§Á¬À» ³Ö¾úÀ½.
+    //Subì—ë‹¤ê°€ ìœ„ì ¯ì„ ë„£ì—ˆìŒ.
     QMdiSubWindow *subWindow1 = new QMdiSubWindow();
     subWindow1 -> resize(300,200);
 
     QPushButton *btn = new QPushButton("ë²„íŠ¼");
-    subWindow1->setWidget(btn); //¹öÆ°À» subWindow¿¡ µî·Ï
+    subWindow1->setWidget(btn); //ë²„íŠ¼ì„ subWindowì— ë“±ë¡
 
     QMdiSubWindow *subWindow2 = new QMdiSubWindow();
-    subWindow2->resize(300,200);    //µÎ¹øÂ° subWindow´Â ¾Æ¹«°Íµµ µî·Ï¾ÈÇÔ.
+    subWindow2->resize(300,200);    //ë‘ë²ˆì§¸ subWindowëŠ” ì•„ë¬´ê²ƒë„ ë“±ë¡ì•ˆí•¨.
 
     area->addSubWindow(subWindow1);
     area->addSubWindow(subWindow2);
-    //subWindow1,2¸¦ area¿¡ µî·Ï.
-    QHBoxLayout *hLay  = new QHBoxLayout(); // horizontal Layout »ı¼º.
+    //subWindow1,2ë¥¼ areaì— ë“±ë¡.
+    QHBoxLayout *hLay  = new QHBoxLayout(); // horizontal Layout ìƒì„±.
 
-    hLay -> addWidget(area);    //MdiArea µî·Ï.
+    hLay -> addWidget(area);    //MdiArea ë“±ë¡.
 
     setLayout(hLay);
 }
